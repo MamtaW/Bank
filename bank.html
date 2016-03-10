@@ -1,0 +1,86 @@
+<head>
+  <title>Bank Account Details</title>
+</head>
+
+<body>
+  <h1>Bank Account Details</h1>
+
+  {{> itemList}}
+</body>
+<template name="itemList">
+  <p></p>
+  <table>
+    <thead>
+      <tr>
+        <th>   Bank Acc No</th>      
+        <th>   Bank Name</th>
+        <th>   Branch</th>
+        <th>   Acc Holder</th>
+        <th>   Acc Holder2</th>
+        
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>  
+    {{#each items}}
+      {{> item}}
+    {{/each}}
+    </tbody>
+  </table>
+  {{> addItem}}
+</template>
+<template name="item">
+  <tr>
+    <td>&nbsp; {{Acc_Name}}</td>
+    <td>&nbsp; {{Bank_Name}}</td>
+    <td>&nbsp; {{Branch}}</td>
+    <td>&nbsp; {{Hol_Name1}}</td>
+    <td>&nbsp; {{Hol_Name2}}</td>
+   
+   <td> <button class="deleteItem">Delete</button></td>
+  </tr>
+</template>
+
+<template name="addItem">
+<form id="addItemForm" name="contact_form" class="contact_form">
+  <ul>
+    <li>
+         <h2>Details</h2>
+         <span class="required_notification">* Denotes Required Field</span>
+    </li>
+    <li>
+        <label for="Bank Account No">Bank Account No:</label>
+        <input type="number" id="accno" />
+    </li>
+	<li>
+    <label for="Bank Name">Bank Name:</label>
+    <input type="text" id="bankname" />
+    
+</li>
+<li>
+    <label for="branch">Branch:</label>
+    <input type="text" id="branch" />
+    
+</li>
+<fieldset>
+<legend>
+ <label for="Account Holders">Account Holders:</label>
+</legend>
+<li>
+<label for="name1">Name1</label>
+    <input type="text" id="Name1" />
+	</li>
+	<li>
+	<label for="name2">Name2:</label>
+    <input type="text" id="Name2" />
+	</li>
+	<li>
+	<label for="name3">Name3:</label>
+    <input type="text" id="Name3" />
+	</li>
+	</fieldset>
+</ul>
+<br><br>
+<input type="submit" id="addNewItem" value="Submit">
+</form>
+</template>
